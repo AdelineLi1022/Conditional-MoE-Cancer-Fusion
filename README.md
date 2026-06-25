@@ -19,3 +19,15 @@ python create_patches_fp.py \
     --process_list CSV_FILE_NAME \
     --patch \
     --stitch
+### 2.Extract Features
+Extract high-level visual representations at the patch level using two parallel pre-trained visual backbones: CTransPath and MoCo-ViT.
+
+```bash
+python extract_features_fp.py \
+    --data_h5_dir DIR_TO_COORDS \
+    --data_slide_dir DATA_DIRECTORY \
+    --csv_path CSV_FILE_NAME \
+    --feat_dir FEATURES_DIRECTORY \
+    --batch_size 512 \
+    --slide_ext .svs
+📌 Note: We use two types of feature extractors: CtransPath and ViT. Please download the pretrained weights TransPath and use the provided modified timm package as configured in the baseline environment.
